@@ -3,6 +3,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="LazyCache.AspNetCore">
+      <Version>2.0.0-beta03</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore">
       <Version>2.1.0</Version>
@@ -32,5 +35,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="leaguePoints.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

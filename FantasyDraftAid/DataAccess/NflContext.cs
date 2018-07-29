@@ -20,6 +20,8 @@ namespace FantasyDraftAid.DataAccess
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Play>()
+                .HasKey(c => new {c.GameId, c.DriveId, c.PlayId, c.PlayerId});
             builder.ForNpgsqlHasEnum("player_pos",
                 new[]
                 {
@@ -30,5 +32,7 @@ namespace FantasyDraftAid.DataAccess
 
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
+        public DbSet<Play> Plays { get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }

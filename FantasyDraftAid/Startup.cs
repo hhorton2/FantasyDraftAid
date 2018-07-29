@@ -1,4 +1,5 @@
 using FantasyDraftAid.DataAccess;
+using FantasyDraftAid.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,8 +21,11 @@ namespace FantasyDraftAid
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<ConfigurationService>();
+            services.AddTransient<PlayerPointsService>();
             var connectionString = Configuration.GetConnectionString("NflContext");
             services.AddEntityFrameworkNpgsql().AddDbContext<NflContext>(options => options.UseNpgsql(connectionString));
+            services.AddLazyCache();
 
         }
 

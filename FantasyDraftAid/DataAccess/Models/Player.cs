@@ -13,7 +13,7 @@ namespace FantasyDraftAid.DataAccess.Models
         [Column("last_name")] public string LastName { get; set; }
         [Column("team")] public string TeamId { get; set; }
         [ForeignKey(nameof(TeamId))] public Team Team { get; set; }
-        [Column("years_pro")] public int YearsPro { get; set; }
+        [Column("years_pro")] public int? YearsPro { get; set; }
         [Column("position")] public PlayerPosition Position { get; set; }
         [Column("profile_url")] public string ProfileUrl { get; set; }
         [Column("status")] public PlayerStatus PlayerStatus { get; set; }
