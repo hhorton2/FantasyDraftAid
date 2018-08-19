@@ -123,8 +123,5 @@
       }
     }
   },
-  "defaultProject": "FantasyDraftAid",
-  "cli": {
-    "packageManager": "yarn"
-  }
+  "defaultProject": "FantasyDraftAid"
 }
