@@ -53,7 +53,7 @@ namespace FantasyDraftAid.Services
                     YearsPro = playerMap.GetValueOrDefault(p.Id).YearsPro ?? 0,
                     PriorYearGamesPlayed = p.GamesPlayed,
                     PriorYearPoints = GetPoints(config, p),
-                    PriorYearPointsPPG = decimal.ToInt32(GetPoints(config, p) / p.GamesPlayed == 0 ? 1 : p.GamesPlayed),
+                    PriorYearPointsPPG = decimal.ToInt32(p.GamesPlayed == 0 ? 1 : GetPoints(config, p) / p.GamesPlayed),
                     TwoYearGamesPlayed = playerTwoMap.GetOrAdd(p.Id, new FantasyPlayerAggregateView()).GamesPlayed,
                     TwoYearPoints = GetPoints(config, playerTwoMap.GetOrAdd(p.Id, new FantasyPlayerAggregateView())),
                     TwoYearPointsPPG =
